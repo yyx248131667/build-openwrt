@@ -1,19 +1,18 @@
-name: "Make OpenWrt"
-author: "https://github.com/ophub/amlogic-s9xxx-openwrt"
-description: "Support Amlogic, Rockchip and Allwinner boxes."
+name: "Make OpenWrt for x86"
+description: "Support x86 architecture for OpenWrt."
 inputs:
   mode:
     description: "Select script."
     required: false
     default: "ophub"
   openwrt_path:
-    description: "Select armvirt64 file path."
+    description: "Select x86 file path."
     required: false
-    default: "openwrt/bin/targets/*/*/*rootfs.tar.gz"
+    default: "openwrt/bin/targets/x86/64/*rootfs.tar.gz"
   openwrt_board:
     description: "Select device board."
     required: false
-    default: "all"
+    default: "generic"
   kernel_repo:
     description: "Select kernel repository."
     required: false
@@ -25,7 +24,7 @@ inputs:
   openwrt_kernel:
     description: "Select kernel version."
     required: false
-    default: "6.1.1_5.15.1"
+    default: "5.10.**
   auto_kernel:
     description: "Auto use the latest kernel."
     required: false
@@ -52,7 +51,7 @@ runs:
         echo -e "ophub package actions path: ${PWD}"
 
         openwrt_filename="${{ inputs.openwrt_path }}"
-        openwrt_savepath="openwrt-armvirt"
+        openwrt_savepath="openwrt-x86"
         openwrt_outpath="out"
         echo -e "Get openwrt file input parameters: [ ${openwrt_filename} ]"
         [[ -z "${openwrt_filename}" ]] && echo -e "The [ openwrt_path ] variable must be specified." && exit 1
