@@ -69,7 +69,7 @@ host_release="$(cat /etc/os-release | grep '^VERSION_CODENAME=.*' | cut -d'=' -f
 op_release="etc/flippy-openwrt-release"
 
 # Dependency files download repository
-depends_repo="https://github.com/ophub/amlogic-s9xxx-armbian/tree/main/build-armbian"
+#depends_repo="https://github.com/ophub/amlogic-s9xxx-armbian/tree/main/build-armbian"
 # Convert depends repository address to svn format
 depends_repo="${depends_repo//tree\/main/trunk}"
 
@@ -79,7 +79,7 @@ firmware_repo="https://github.com/ophub/firmware/tree/main/firmware"
 firmware_repo="${firmware_repo//tree\/main/trunk}"
 
 # Install/Update script files download repository
-script_repo="https://github.com/ophub/luci-app-amlogic/tree/main/luci-app-amlogic"
+#script_repo="https://github.com/ophub/luci-app-amlogic/tree/main/luci-app-amlogic"
 # Convert script repository address to svn format
 script_repo="${script_repo//tree\/main/trunk}"
 
